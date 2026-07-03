@@ -12,7 +12,10 @@
   "plugins": [
     {
       "name": "ono-project-inspector",
-      "source": "./plugins/ono-project-inspector",
+      "source": {
+        "source": "github",
+        "repo": "appsadmin-design/Ono-ProjectInspectorPlugin"
+      },
       "description": "Inspects an existing software repository and gradually builds a structured, approval-gated AI knowledge base for it (CLAUDE.md, AUDIT.md, docs/project/, and per-topic audit documents), then syncs approved findings back into CLAUDE.md. Never modifies source code.",
       "version": "0.3.0",
       "author": {
