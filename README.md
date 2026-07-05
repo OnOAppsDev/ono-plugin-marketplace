@@ -17,13 +17,13 @@ Nothing to clone. The marketplace and each plugin are fetched directly from GitH
 ### 1. Add the marketplace
 
 ```
-/plugin marketplace add appsadmin-design/ono-claude-marketplace
+/plugin marketplace add appsadmin-design/ono-plugin-marketplace
 ```
 
 ### 2. Install the plugin
 
 ```
-/plugin install ono-project-inspector@ono-claude-marketplace
+/plugin install ono-project-inspector@ono-plugin-marketplace
 ```
 
 Claude Code restarts and the plugin's commands, agents, and skills become available. The plugin adds the `/inspect`, `/inspect-status`, `/inspect-topic`, and `/inspect-approve` commands.
@@ -35,30 +35,30 @@ Claude Code restarts and the plugin's commands, agents, and skills become availa
 /plugin
 ```
 
-You should see `ono-claude-marketplace` listed and `ono-project-inspector` installed.
+You should see `ono-plugin-marketplace` listed and `ono-project-inspector` installed.
 
 ## Updating
 
 After new changes are published to the plugin or marketplace repo:
 
 ```
-/plugin marketplace update ono-claude-marketplace
+/plugin marketplace update ono-plugin-marketplace
 ```
 
 ## How it's wired
 
-- `.claude-plugin/marketplace.json` — the marketplace manifest. Its `ono-project-inspector` entry uses a **GitHub source** pointing at the plugin's own repository, `appsadmin-design/Ono-ProjectInspectorPlugin`.
+- `.claude-plugin/marketplace.json` — the marketplace manifest. Its `ono-project-inspector` entry uses an **HTTPS `url` source** pointing at the plugin's own repository, `https://github.com/appsadmin-design/ono-plugin-project-inspector.git`. HTTPS is used (rather than a `github` source, which clones over SSH) so installs work on any machine without SSH keys configured.
 - The plugin's code is **not** duplicated or symlinked into this repo. It lives only in its own repository; Claude Code fetches it from GitHub on install.
 
-With no `ref` specified, the marketplace tracks the plugin repo's default branch (`main`). To pin installs to a specific release, add a `ref` (branch, tag) or `sha` to the source:
+The source pins `ref: main`, so the marketplace tracks the plugin repo's default branch. To pin installs to a specific release instead, change `ref` to a tag (or add a `sha`):
 
 ```json
 {
   "name": "ono-project-inspector",
   "source": {
-    "source": "github",
-    "repo": "appsadmin-design/Ono-ProjectInspectorPlugin",
-    "ref": "v0.3.0"
+    "source": "url",
+    "url": "https://github.com/appsadmin-design/ono-plugin-project-inspector.git",
+    "ref": "v0.7.0"
   }
 }
 ```

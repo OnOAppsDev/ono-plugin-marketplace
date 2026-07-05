@@ -1,6 +1,6 @@
 {
   "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
-  "name": "ono-claude-marketplace",
+  "name": "ono-plugin-marketplace",
   "owner": {
     "name": "Ono Apps",
     "email": "yagil@onoapps.com"
@@ -14,7 +14,7 @@
       "name": "ono-project-inspector",
       "source": {
         "source": "url",
-        "url": "https://github.com/appsadmin-design/Ono-ProjectInspectorPlugin.git",
+        "url": "https://github.com/appsadmin-design/ono-plugin-project-inspector.git",
         "ref": "main"
       },
       "description": "Inspects an existing software repository and gradually builds a structured, approval-gated AI knowledge base for it (CLAUDE.md, AUDIT.md, docs/project/, and per-topic audit documents) via a breakdown → approve loop, with an on-demand documentation-sync maintenance tool and resumable, fully registry-driven state tracking in .ono/state.json. Never modifies source code.",
