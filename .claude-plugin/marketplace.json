@@ -32,13 +32,13 @@
       ]
     },
     {
-      "name": "ono-react-native-dev-plugin",
+      "name": "ono-mobile-dev-plugin",
       "source": {
         "source": "url",
-        "url": "https://github.com/appsadmin-design/ono-react-native-dev-plugin.git",
+        "url": "https://github.com/appsadmin-design/ono-mobile-dev-plugin.git",
         "ref": "main"
       },
-      "description": "React Native SDLC workflow for Ono Apps: feature analysis, dev planning, implementation, code review, debugging, QA handoff, and release readiness.",
+      "description": "Mobile SDLC workflow for Ono Apps: feature analysis, dev planning, implementation, code review, debugging, QA handoff, and release readiness.",
       "version": "0.1.0",
       "author": {
         "name": "Ono Apps",
