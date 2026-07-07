@@ -9,7 +9,7 @@ The version below is the marketplace's own `metadata.version` in
 a plugin is added, **patch** for any other change (renames, source
 swaps, or a listed plugin's own version bump).
 
-## [Unreleased]
+## [1.3.1] - 2026-07-07
 
 ### Changed
 - Renamed `ono-react-native-dev-plugin` to `ono-mobile-dev-plugin` (source
