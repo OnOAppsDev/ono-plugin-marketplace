@@ -10,7 +10,7 @@ Add this marketplace to Claude Code once, then install any Ono plugin from it.
 | --- | --- |
 | `ono-project-inspector` | Inspects an existing repository and gradually builds a structured, approval-gated AI knowledge base for it (`CLAUDE.md`, `AUDIT.md`, `docs/project/`, and per-topic audit documents), then syncs approved findings back into `CLAUDE.md`. **Never modifies source code.** |
 | `ono-mobile-dev-plugin` | Mobile-division SDLC workflow for Ono Apps: feature analysis, dev planning, implementation, code review, debugging, QA handoff, and release readiness across React Native, native iOS, native Android, and React web, with shared process and platform-aware routing. |
-| `ono-plugin-QA-ReactNative` | Figma-grounded QA test planning and dev/QA coverage gap analysis for Ono Apps' React Native features, run in parallel with `ono-mobile-dev-plugin`. |
+| `ono-plugin-qa` | Figma- and spec/LLD-grounded QA test planning, approval, sync, and dev/QA coverage gap analysis for Ono Apps' features across React, React Native, iOS, and Android, run in parallel with `ono-mobile-dev-plugin`. |
 
 ## Install (developers)
 

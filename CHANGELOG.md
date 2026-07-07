@@ -9,6 +9,13 @@ The version below is the marketplace's own `metadata.version` in
 a plugin is added, **patch** for any other change (renames, source
 swaps, or a listed plugin's own version bump).
 
+## [1.3.2] - 2026-07-07
+
+### Changed
+- Renamed `ono-plugin-QA-ReactNative` to `ono-plugin-qa` (source repo,
+  description, and version updated to reflect broader QA scope across
+  React, React Native, iOS, and Android).
+
 ## [1.3.1] - 2026-07-07
 
 ### Changed
