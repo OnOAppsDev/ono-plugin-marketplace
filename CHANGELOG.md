@@ -9,6 +9,13 @@ The version below is the marketplace's own `metadata.version` in
 a plugin is added, **patch** for any other change (renames, source
 swaps, or a listed plugin's own version bump).
 
+## [1.3.3] - 2026-07-08
+
+### Changed
+- Reworked the README so users can find and understand every listed plugin:
+  added the previously-missing `spec-team-toolkit` entry, a "which plugin do
+  I need?" quick-pick table, and a per-plugin command/skill breakdown.
+
 ## [1.3.2] - 2026-07-07
 
 ### Changed
