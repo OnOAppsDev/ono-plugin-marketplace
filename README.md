@@ -31,7 +31,7 @@ Nothing to clone. The marketplace and each plugin are fetched directly from GitH
 ### 1. Add the marketplace
 
 ```
-/plugin marketplace add appsadmin-design/ono-plugin-marketplace
+/plugin marketplace add OnOAppsDev/ono-plugin-marketplace
 ```
 
 ### 2. Install a plugin
@@ -115,7 +115,7 @@ After new changes are published to a plugin or to this marketplace repo:
 
 ## How it's wired
 
-- `.claude-plugin/marketplace.json` — the marketplace manifest. Each plugin entry uses an **HTTPS `url` source** pointing at the plugin's own repository (e.g. `https://github.com/appsadmin-design/ono-plugin-project-inspector.git`). HTTPS is used (rather than a `github` source, which clones over SSH) so installs work on any machine without SSH keys configured.
+- `.claude-plugin/marketplace.json` — the marketplace manifest. Each plugin entry uses an **HTTPS `url` source** pointing at the plugin's own repository (e.g. `https://github.com/OnOAppsDev/ono-plugin-project-inspector.git`). HTTPS is used (rather than a `github` source, which clones over SSH) so installs work on any machine without SSH keys configured.
 - Plugin code is **not** duplicated or symlinked into this repo. It lives only in its own repository; Claude Code fetches it from GitHub on install.
 
 Each source pins `ref: main`, so the marketplace tracks each plugin repo's default branch. To pin an install to a specific release instead, change `ref` to a tag (or add a `sha`):
@@ -125,7 +125,7 @@ Each source pins `ref: main`, so the marketplace tracks each plugin repo's defau
   "name": "ono-project-inspector",
   "source": {
     "source": "url",
-    "url": "https://github.com/appsadmin-design/ono-plugin-project-inspector.git",
+    "url": "https://github.com/OnOAppsDev/ono-plugin-project-inspector.git",
     "ref": "v0.7.0"
   }
 }
