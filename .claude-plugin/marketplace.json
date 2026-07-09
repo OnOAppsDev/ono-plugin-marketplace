@@ -14,7 +14,7 @@
       "name": "ono-project-inspector",
       "source": {
         "source": "url",
-        "url": "https://github.com/appsadmin-design/ono-plugin-project-inspector.git",
+        "url": "https://github.com/OnOAppsDev/ono-plugin-project-inspector.git",
         "ref": "main"
       },
       "description": "Inspects an existing software repository and gradually builds a structured, approval-gated AI knowledge base for it (CLAUDE.md, AUDIT.md, docs/project/, and per-topic audit documents) via a breakdown → approve loop, with an on-demand documentation-sync maintenance tool and resumable, fully registry-driven state tracking in .ono/state.json. Never modifies source code.",
@@ -35,7 +35,7 @@
       "name": "ono-mobile-dev-plugin",
       "source": {
         "source": "url",
-        "url": "https://github.com/appsadmin-design/ono-mobile-dev-plugin.git",
+        "url": "https://github.com/OnOAppsDev/ono-mobile-dev-plugin.git",
         "ref": "main"
       },
       "description": "Mobile-division SDLC workflow for Ono Apps: feature analysis, dev planning, implementation, code review, debugging, QA handoff, and release readiness across React Native, native iOS, native Android, and React web, with shared process and platform-aware routing.",
@@ -49,7 +49,7 @@
       "name": "ono-plugin-qa",
       "source": {
         "source": "url",
-        "url": "https://github.com/appsadmin-design/ono-plugin-qa.git",
+        "url": "https://github.com/OnOAppsDev/ono-plugin-qa.git",
         "ref": "main"
       },
       "description": "Figma- and spec/LLD-grounded QA test planning, approval, sync, and dev/QA coverage gap analysis for Ono Apps' features across React, React Native, iOS, and Android, run in parallel with ono-mobile-dev-plugin.",
@@ -63,7 +63,7 @@
       "name": "spec-team-toolkit",
       "source": {
         "source": "url",
-        "url": "https://github.com/appsadmin-design/spec-team-toolkit.git",
+        "url": "https://github.com/OnOAppsDev/spec-team-toolkit.git",
         "ref": "main"
       },
       "description": "HLD and LLD document builders for the spec team: discovers and scopes a High Level Design with self-QA before customer delivery, and turns a Figma component into a two-part LLD spec for developers/QA.",
