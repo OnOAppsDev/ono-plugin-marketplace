@@ -7,7 +7,7 @@
   },
   "metadata": {
     "description": "Ono internal Claude Code marketplace — plugins built and maintained by Ono Apps.",
-    "version": "1.3.3"
+    "version": "1.4.0"
   },
   "plugins": [
     {
@@ -30,6 +30,20 @@
         "onboarding",
         "read-only"
       ]
+    },
+    {
+      "name": "matrix-studio",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/OnOApps-Admin/MatrixStudioPlugin.git",
+        "ref": "main"
+      },
+      "description": "Design-system generators for Figma: builds a complete two-tier color palette, spacing/scale tokens, and a two-platform typography system as Figma Variables and text styles via the Figma MCP, individually or as one orchestrated design-system run.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Ono Apps",
+        "email": "magen@onoapps.com"
+      }
     },
     {
       "name": "ono-mobile-dev-plugin",

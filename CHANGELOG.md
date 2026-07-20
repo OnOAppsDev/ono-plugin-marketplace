@@ -9,6 +9,13 @@ The version below is the marketplace's own `metadata.version` in
 a plugin is added, **patch** for any other change (renames, source
 swaps, or a listed plugin's own version bump).
 
+## [1.4.0] - 2026-07-20
+
+### Added
+- `matrix-studio` — Figma design-system generator plugin: color palette,
+  spacing/scale tokens, and a two-platform typography system as Figma
+  Variables and text styles via the Figma MCP.
+
 ## [1.3.3] - 2026-07-08
 
 ### Changed

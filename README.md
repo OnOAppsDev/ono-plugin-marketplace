@@ -12,6 +12,7 @@ Add this marketplace to Claude Code once, then install any Ono plugin from it.
 | QA engineer writing test plans or checking coverage | `ono-plugin-qa` |
 | Anyone onboarding onto or auditing an unfamiliar repo | `ono-project-inspector` |
 | Spec/design team writing HLDs or Figma-based LLDs | `spec-team-toolkit` |
+| Designer building a Figma design system (colors, spacing, typography) | `matrix-studio` |
 
 ## Available plugins
 
@@ -21,6 +22,7 @@ Add this marketplace to Claude Code once, then install any Ono plugin from it.
 | [`ono-mobile-dev-plugin`](#ono-mobile-dev-plugin) | 0.2.0 | Mobile-division SDLC workflow for Ono Apps: feature analysis, dev planning, implementation, code review, debugging, QA handoff, and release readiness across React Native, native iOS, native Android, and React web, with shared process and platform-aware routing. |
 | [`ono-plugin-qa`](#ono-plugin-qa) | 0.3.0 | Figma- and spec/LLD-grounded QA test planning, approval, sync, and dev/QA coverage gap analysis for Ono Apps' features across React, React Native, iOS, and Android, run in parallel with `ono-mobile-dev-plugin`. |
 | [`spec-team-toolkit`](#spec-team-toolkit) | 0.1.0 | HLD and LLD document builders for the spec team: discovers and scopes a High Level Design with self-QA before customer delivery, and turns a Figma component into a two-part LLD spec for developers/QA. |
+| [`matrix-studio`](#matrix-studio) | 0.1.0 | Design-system generators for Figma: builds a complete two-tier color palette, spacing/scale tokens, and a two-platform typography system as Figma Variables and text styles via the Figma MCP, individually or as one orchestrated design-system run. |
 
 Versions above track [`marketplace.json`](.claude-plugin/marketplace.json) at the time this README was last updated — see that file for the current source of truth.
 
@@ -41,6 +43,7 @@ Nothing to clone. The marketplace and each plugin are fetched directly from GitH
 /plugin install ono-mobile-dev-plugin@ono-plugin-marketplace
 /plugin install ono-plugin-qa@ono-plugin-marketplace
 /plugin install spec-team-toolkit@ono-plugin-marketplace
+/plugin install matrix-studio@ono-plugin-marketplace
 ```
 
 Install only the ones you need — see [Which plugin do I need?](#which-plugin-do-i-need) above.
@@ -104,6 +107,17 @@ Two skills for the spec team's document workflow — invoked by describing what 
 | --- | --- |
 | `hld-builder` | Discovers and scopes a High Level Design through fixed question scripts, drafts it against the team's template, and self-reviews against a 10-part QA checklist before customer delivery |
 | `lld-figma-spec` | Extracts design data from a Figma component via MCP tools and produces a two-part content-entry + display/behavior spec for developers and QA |
+
+### `matrix-studio`
+
+Generates a complete Figma design system — color palette, spacing/scale tokens, and a two-platform typography system — directly into a Figma file via the bundled Figma MCP connection. Requires a Full Figma seat and edit permission on the target file; a one-time Figma OAuth authorization is needed after install (see the plugin's own README for setup).
+
+| Skill | Slash command | What it creates |
+| --- | --- | --- |
+| Color palette | `/matrix-studio:figma-color-palette-generator` | `Primitives` + `Semantic` (Light/Dark) COLOR variable collections + a visual reference frame |
+| Space & scale | `/matrix-studio:figma-space-scale-generator` | `Scale` + `Tokens` FLOAT variable collections + a visual reference frame |
+| Typography | `/matrix-studio:figma-type-system-generator` | `Type Primitives` + `Type Tokens` collections + variable-bound text styles for desktop/mobile + a visual specimen frame |
+| Full design system | `/matrix-studio:generate-design-system` | Runs all three above, in order, with one shared preflight, input pass, conflict check, and completion report |
 
 ## Updating
 
