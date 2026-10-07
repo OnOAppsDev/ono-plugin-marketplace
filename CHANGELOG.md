@@ -9,6 +9,17 @@ The version below is the marketplace's own `metadata.version` in
 a plugin is added, **patch** for any other change (renames, source
 swaps, or a listed plugin's own version bump).
 
+## [1.4.3] - 2026-10-07
+
+### Changed
+- `spec-team-toolkit`'s marketplace description and README skill table, to
+  match its own `plugin.json` now at 0.4.2: `hld-builder` offers a draw.io
+  diagram at the existing-state, business-process, and entity sections when
+  one would help, recording the accept/decline so it isn't re-asked next
+  session; `lld-mobile-spec` and `lld-backend-spec` gate their existing
+  diagram rendering behind the same yes/no question instead of generating
+  automatically.
+
 ## [1.4.2] - 2026-10-07
 
 ### Changed
