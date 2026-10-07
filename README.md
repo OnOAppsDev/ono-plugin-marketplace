@@ -46,7 +46,7 @@ Paths inside a per-plugin document (`skills/`, `agents/`, `scripts/`, `commands/
 | [`ono-project-inspector`](#ono-project-inspector) | Inspects an existing repository and gradually builds a structured, approval-gated AI knowledge base for it (`CLAUDE.md`, `AUDIT.md`, `docs/project/`, and per-topic audit documents), then syncs approved findings back into `CLAUDE.md`. **Never modifies source code.** |
 | [`ono-mobile-dev-plugin`](#ono-mobile-dev-plugin) | Mobile-division SDLC workflow for Ono Apps: feature analysis, detailed design, task breakdown, implementation, code review, debugging, QA handoff, and release readiness across React Native, native iOS, native Android, and React web, with shared process and platform-aware routing. |
 | [`ono-plugin-qa`](#ono-plugin-qa) | Figma- and spec/LLD-grounded QA test planning, approval, sync, dev/QA coverage gap analysis, Appium automation generation, and live locator verification for Ono Apps' features across React, React Native, iOS, and Android, run in parallel with `ono-mobile-dev-plugin`. |
-| [`spec-team-toolkit`](#spec-team-toolkit) | HLD and LLD document builders for the spec team: discovers and scopes a High Level Design with self-QA before customer delivery, and turns a Figma component into a two-part LLD spec for developers/QA. |
+| [`spec-team-toolkit`](#spec-team-toolkit) | HLD and LLD document builders for the spec team: builds a High Level Design incrementally across sessions with a fixed discovery script and self-QA before customer delivery, and produces team-specific LLDs — a web component spec from Figma, a mobile (React Native/Native) feature spec, and a backend service/API spec. |
 | [`matrix-studio`](#matrix-studio) | Design-system generators for Figma: builds a complete two-tier color palette, spacing/scale tokens, and a two-platform typography system as Figma Variables and text styles via the Figma MCP, individually or as one orchestrated design-system run. |
 
 **There is deliberately no version column.** A plugin's version is owned by its own
@@ -131,12 +131,14 @@ Lets QA author Figma- and spec/LLD-grounded test plans while dev is still implem
 
 ### `spec-team-toolkit`
 
-Two skills for the spec team's document workflow — invoked by describing what you need (no dedicated slash commands).
+Four skills for the spec team's document workflow — invoked by describing what you need (no dedicated slash commands).
 
 | Skill | What it does |
 | --- | --- |
 | `hld-builder` | Discovers and scopes a High Level Design through fixed question scripts, drafts it against the team's template, and self-reviews against a 10-part QA checklist before customer delivery |
-| `lld-figma-spec` | Extracts design data from a Figma component via MCP tools and produces a two-part content-entry + display/behavior spec for developers and QA |
+| `lld-web-figma-spec` | Extracts design data from a Figma component via MCP tools and produces a two-part content-entry + display/behavior spec for the frontend web team |
+| `lld-mobile-spec` | Gathers requirements, Figma, Backend DD, and repo context conversationally and produces a React Native/Native iOS-Android feature spec (SPAC) |
+| `lld-backend-spec` | Produces a backend service/API spec — endpoint contracts, data model, and business-rule/edge-case coverage — from the relevant HLD and a read-only codebase scan |
 
 ### `matrix-studio`
 

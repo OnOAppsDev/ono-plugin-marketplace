@@ -7,7 +7,7 @@
   },
   "metadata": {
     "description": "Ono internal Claude Code marketplace — plugins built and maintained by Ono Apps.",
-    "version": "1.4.1"
+    "version": "1.4.2"
   },
   "plugins": [
     {
@@ -76,7 +76,7 @@
         "url": "https://github.com/OnOAppsDev/spec-team-toolkit.git",
         "ref": "main"
       },
-      "description": "HLD and LLD document builders for the spec team: discovers and scopes a High Level Design with self-QA before customer delivery, and turns a Figma component into a two-part LLD spec for developers/QA.",
+      "description": "HLD and LLD document builders for the spec team: builds a High Level Design incrementally across sessions with a fixed discovery script and self-QA before customer delivery, and produces team-specific LLDs — a web component spec from Figma, a mobile (React Native/Native) feature spec, and a backend service/API spec.",
       "author": {
         "name": "Ono Apps",
         "email": "magen@onoapps.com"

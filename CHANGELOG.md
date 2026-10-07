@@ -9,6 +9,17 @@ The version below is the marketplace's own `metadata.version` in
 a plugin is added, **patch** for any other change (renames, source
 swaps, or a listed plugin's own version bump).
 
+## [1.4.2] - 2026-10-07
+
+### Changed
+- `spec-team-toolkit`'s marketplace description, to match its own
+  `plugin.json` now at 0.4.1: added `lld-mobile-spec` and
+  `lld-backend-spec` alongside the existing `hld-builder` and
+  `lld-web-figma-spec` (renamed from `lld-figma-spec`), broadening it from
+  a web-only LLD tool to a full-team (web/mobile/backend) spec toolkit.
+- The README's `spec-team-toolkit` skill table, to list all four skills
+  with their current names.
+
 ## [1.4.1] - 2026-09-08
 
 ### Removed
@@ -39,7 +50,6 @@ swaps, or a listed plugin's own version bump).
   `source` and its own `metadata.version`; each plugin owns everything else, its `version`
   above all. Marketplace-facing `description` stays a deliberate,
   hand-maintained summary of the plugin's own.
-
 ## [1.4.0] - 2026-07-20
 
 ### Added
