@@ -38,6 +38,7 @@ Paths inside a per-plugin document (`skills/`, `agents/`, `scripts/`, `commands/
 | Anyone onboarding onto or auditing an unfamiliar repo | `ono-project-inspector` |
 | Spec/design team writing HLDs or Figma-based LLDs | `spec-team-toolkit` |
 | Designer building a Figma design system (colors, spacing, typography) | `matrix-studio` |
+| Matrix IT web QA writing LLD-based test plans and Playwright automation | `matrix-qa-plugin` |
 
 ## Available plugins
 
@@ -48,6 +49,7 @@ Paths inside a per-plugin document (`skills/`, `agents/`, `scripts/`, `commands/
 | [`ono-plugin-qa`](#ono-plugin-qa) | Figma- and spec/LLD-grounded QA test planning, approval, sync, dev/QA coverage gap analysis, Appium automation generation, and live locator verification for Ono Apps' features across React, React Native, iOS, and Android, run in parallel with `ono-mobile-dev-plugin`. |
 | [`spec-team-toolkit`](#spec-team-toolkit) | HLD and LLD document builders for the spec team: builds a High Level Design incrementally across sessions with a fixed discovery script and self-QA before customer delivery, and produces team-specific LLDs — a web component spec from Figma, a mobile (React Native/Native) feature spec, and a backend service/API spec — each offering an ask-first draw.io diagram where one would help. |
 | [`matrix-studio`](#matrix-studio) | Design-system generators for Figma: builds a complete two-tier color palette, spacing/scale tokens, and a two-platform typography system as Figma Variables and text styles via the Figma MCP, individually or as one orchestrated design-system run. |
+| [`matrix-qa-plugin`](#matrix-qa-plugin) | LLD-first web QA for Matrix IT: manual test plan generation from the LLD and optional Figma design, independent review, explicit approval, LLD change sync with impact analysis, and standard Playwright TypeScript automation (Page Object Model) with run and failure analysis. |
 
 **There is deliberately no version column.** A plugin's version is owned by its own
 `.claude-plugin/plugin.json`, and Claude Code reads it from there — so a version listed
@@ -73,6 +75,7 @@ Nothing to clone. The marketplace and each plugin are fetched directly from GitH
 /plugin install ono-plugin-qa@ono-plugin-marketplace
 /plugin install spec-team-toolkit@ono-plugin-marketplace
 /plugin install matrix-studio@ono-plugin-marketplace
+/plugin install matrix-qa-plugin@ono-plugin-marketplace
 ```
 
 Install only the ones you need — see [Which plugin do I need?](#which-plugin-do-i-need) above.
@@ -150,6 +153,20 @@ Generates a complete Figma design system — color palette, spacing/scale tokens
 | Space & scale | `/matrix-studio:figma-space-scale-generator` | `Scale` + `Tokens` FLOAT variable collections + a visual reference frame |
 | Typography | `/matrix-studio:figma-type-system-generator` | `Type Primitives` + `Type Tokens` collections + variable-bound text styles for desktop/mobile + a visual specimen frame |
 | Full design system | `/matrix-studio:generate-design-system` | Runs all three above, in order, with one shared preflight, input pass, conflict check, and completion report |
+
+### `matrix-qa-plugin`
+
+Turns a web feature's LLD (plus optional Figma frames) into a reviewed, explicitly approved manual test plan, keeps it in sync when the LLD changes, and generates standard Playwright TypeScript automation (Page Object Model) that runs without Claude Code. Works in a separate QA repository and treats the application repo as read-only. Requires Node.js 20.12+; Figma access is optional (see the plugin's own README for setup). Independent of `ono-plugin-qa`, which covers Ono's mobile/Appium flow.
+
+| Command | What it does |
+| --- | --- |
+| `/qa-init` | Inspects the QA repo, proposes the structure and config, applies only approved files |
+| `/qa-plan` | Generates a manual test plan from the LLD and optional Figma frames, with an independent review |
+| `/qa-review` | Independent review of a plan; records `REVIEWED` or `CHANGES_REQUIRED` |
+| `/qa-approve` | Feature-level approval by a named QA engineer, fingerprinted against the LLD |
+| `/qa-sync` | Detects LLD (and optionally Figma) changes, proposes impact, applies approved changes only |
+| `/qa-automate` | Generates Playwright TypeScript specs, page objects, and fixtures from an approved plan |
+| `/qa-run` | Runs `npx playwright test` and classifies failures (application / automation / environment / test data) |
 
 ## Updating
 

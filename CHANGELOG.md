@@ -9,6 +9,14 @@ The version below is the marketplace's own `metadata.version` in
 a plugin is added, **patch** for any other change (renames, source
 swaps, or a listed plugin's own version bump).
 
+## [1.5.0] - 2026-10-21
+
+### Added
+- `matrix-qa-plugin` — LLD-first web QA for Matrix IT: reviewed and
+  approved manual test plans from the LLD and optional Figma, LLD change
+  sync, and Playwright TypeScript (Page Object Model) automation with run
+  and failure analysis.
+
 ## [1.4.3] - 2026-10-07
 
 ### Changed
