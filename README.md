@@ -107,6 +107,8 @@ The one plugin an employee needs. It is a coordinator, not a re-implementation: 
 | `git add` / `git commit` | Blocks secrets and plugin scratch files; asks before committing stray working files (notes, drafts, logs) |
 | Long session or "close the session" | Commits on the work branch, opens a PR (never pushes to the central branch), writes the session note, and tells the employee to `/clear` |
 
+Requires Claude Code 2.1.140 or newer (installs dependencies the marketplace entry doesn't list; `claude update` if older).
+
 ### `ono-project-inspector`
 
 Builds a structured, approval-gated AI knowledge base for an existing repo without ever touching its source code.
