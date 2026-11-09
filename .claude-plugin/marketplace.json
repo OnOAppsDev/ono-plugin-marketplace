@@ -7,9 +7,29 @@
   },
   "metadata": {
     "description": "Ono internal Claude Code marketplace — plugins built and maintained by Ono Apps.",
-    "version": "1.5.0"
+    "version": "1.6.0"
   },
   "plugins": [
+    {
+      "name": "platform-guardian",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/OnOAppsDev/yes-platform-guardian.git",
+        "ref": "master"
+      },
+      "description": "Single entry point for Ono employees in Claude Code: opens every session with a git-hygiene check against the project's central branch, asks what you're working on (bug, feature, QA, spec), routes you into the right Ono plugin process, guards commits against secrets and stray working files, and closes the session with commit / PR / clear guidance. Installing it installs all six Ono plugins.",
+      "author": {
+        "name": "Ono Apps",
+        "email": "tom@onoapps.com"
+      },
+      "keywords": [
+        "onboarding",
+        "router",
+        "git",
+        "workflow",
+        "session"
+      ]
+    },
     {
       "name": "ono-project-inspector",
       "source": {

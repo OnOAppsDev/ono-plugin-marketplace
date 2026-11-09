@@ -9,6 +9,17 @@ The version below is the marketplace's own `metadata.version` in
 a plugin is added, **patch** for any other change (renames, source
 swaps, or a listed plugin's own version bump).
 
+## [1.6.0] - 2026-11-08
+
+### Added
+- `platform-guardian` — the single entry point for Ono employees: a git
+  check against the project's central branch at every session start,
+  routing into the right Ono plugin command (bug, feature, QA, spec,
+  design system, repo onboarding), a commit guard against secrets and
+  stray working files, and a session close-out (commit, PR, `/clear`).
+  Declares the six Ono plugins as `dependencies`, so installing it
+  installs them all.
+
 ## [1.5.0] - 2026-10-21
 
 ### Added
