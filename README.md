@@ -33,7 +33,7 @@ Paths inside a per-plugin document (`skills/`, `agents/`, `scripts/`, `commands/
 
 | I am a... | Use this plugin |
 | --- | --- |
-| Anyone at Ono who wants one guided path (it brings all the plugins below) | `platform-guardian` |
+| Every developer at Ono — one guided path (it brings the dev plugin and the inspector) | `platform-guardian` |
 | Engineer shipping a mobile/web feature (React Native, iOS, Android, React) | `ono-mobile-dev-plugin` |
 | QA engineer writing test plans or checking coverage | `ono-plugin-qa` |
 | Anyone onboarding onto or auditing an unfamiliar repo | `ono-project-inspector` |
@@ -45,7 +45,7 @@ Paths inside a per-plugin document (`skills/`, `agents/`, `scripts/`, `commands/
 
 | Plugin | Description |
 | --- | --- |
-| [`platform-guardian`](#platform-guardian) | Single entry point for Ono employees: git-hygiene check at session start, routing into the right Ono plugin process, a commit guard, and a commit / PR / `/clear` close-out. Installing it installs all six plugins below. |
+| [`platform-guardian`](#platform-guardian) | Single entry point for Ono employees: git-hygiene check at session start, routing into the right Ono plugin process, a commit guard, and a commit / PR / `/clear` close-out. Installing it installs the developer setup: `ono-mobile-dev-plugin` and `ono-project-inspector` (since 0.8.0; the QA team installs `ono-plugin-qa` itself). |
 | [`ono-project-inspector`](#ono-project-inspector) | Inspects an existing repository and gradually builds a structured, approval-gated AI knowledge base for it (`CLAUDE.md`, `AUDIT.md`, `docs/project/`, and per-topic audit documents), then syncs approved findings back into `CLAUDE.md`. **Never modifies source code.** |
 | [`ono-mobile-dev-plugin`](#ono-mobile-dev-plugin) | Mobile-division SDLC workflow for Ono Apps: feature analysis, detailed design, task breakdown, implementation, code review, debugging, QA handoff, and release readiness across React Native, native iOS, native Android, and React web, with shared process and platform-aware routing. |
 | [`ono-plugin-qa`](#ono-plugin-qa) | Figma- and spec/LLD-grounded QA test planning, approval, sync, dev/QA coverage gap analysis, Appium automation generation, and live locator verification for Ono Apps' features across React, React Native, iOS, and Android, run in parallel with `ono-mobile-dev-plugin`. |
@@ -72,7 +72,7 @@ Nothing to clone. The marketplace and each plugin are fetched directly from GitH
 ### 2. Install a plugin
 
 ```
-/plugin install platform-guardian@ono-plugin-marketplace     # brings all the plugins below
+/plugin install platform-guardian@ono-plugin-marketplace     # brings the dev plugin + the inspector
 /plugin install ono-project-inspector@ono-plugin-marketplace
 /plugin install ono-mobile-dev-plugin@ono-plugin-marketplace
 /plugin install ono-plugin-qa@ono-plugin-marketplace
@@ -98,12 +98,12 @@ You should see `ono-plugin-marketplace` listed and your installed plugin(s) enab
 
 ### `platform-guardian`
 
-The one plugin an employee needs. It is a coordinator, not a re-implementation: the other plugins own their processes and approval gates, Guardian owns the path between them. Its `dependencies` list all six Ono plugins, so installing it installs them.
+The one plugin an employee needs. It is a coordinator, not a re-implementation: the other plugins own their processes and approval gates, Guardian owns the path between them. Its `dependencies` are the developer setup — `ono-mobile-dev-plugin` and `ono-project-inspector` — so installing it installs them (Guardian 0.8.0). `ono-plugin-qa` is the QA team's and installed separately; developers and QA share work through documents (bug ledgers, QA handoffs, QA results, release readiness), not through each other's plugins.
 
 | When | What it does |
 | --- | --- |
 | Session start (and after `/clear`) | Checks the branch against the project's central branch (usually `develop`) — loud warning when behind, never updates on its own; offers a work branch when on the central branch; reminds where the last session stopped (local note, never in git) |
-| "What are we doing?" | Routes a bug / feature / QA / spec / design-system / repo-onboarding request to the right plugin command; never runs human-only approval steps |
+| "What are we doing?" | Routes a bug / feature / QA / design-system / repo-onboarding request to the right plugin command; never runs human-only approval steps |
 | `git add` / `git commit` | Blocks secrets and plugin scratch files; asks before committing stray working files (notes, drafts, logs) |
 | Long session or "close the session" | Commits on the work branch, opens a PR (never pushes to the central branch), writes the session note, and tells the employee to `/clear` |
 
