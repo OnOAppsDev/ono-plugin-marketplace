@@ -17,7 +17,7 @@
         "url": "https://github.com/OnOAppsDev/ono-platform-guardian.git",
         "ref": "master"
       },
-      "description": "Single entry point for Ono employees in Claude Code: opens every session with a git-hygiene check against the project's central branch, asks what you're working on (bug, feature, QA, spec), routes you into the right Ono plugin process, guards commits against secrets and stray working files, and closes the session with commit / PR / clear guidance. Installing it installs all six Ono plugins.",
+      "description": "Single entry point for Ono employees in Claude Code: opens every session with a git-hygiene check against the project's central branch, asks what you're working on (bug, feature, QA), routes you into the right Ono plugin process, guards commits against secrets and stray working files, and closes the session with commit / PR / clear guidance. Installing it installs the developer setup: the Ono dev plugin and the Ono Project Inspector (the QA team installs ono-plugin-qa itself).",
       "author": {
         "name": "Ono Apps",
         "email": "tom@onoapps.com"
